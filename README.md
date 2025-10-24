@@ -1,200 +1,118 @@
-﻿# Rapport_Test_INSSPA_REC2025-
+Rapport de Test Playwright
 
-🧾 Rapport Final de Validation des Tests - Plateforme de Recrutement INSSPA
-👨‍💻 Informations générales
+Nom du projet :
+Test automatisé du site INSSPA Recrutement 2025
 
-Responsable QA : Hamad Ghabri
-Période : 18 → 24 octobre 2025
-Type de tests : End-to-End (E2E) avec Playwright
-Résultat global : ✅ Tous les tests réussis
+Testeur / Analyste :
+Hamad Ghabri
 
-⚙️ Objectif du projet
+Outils de test :
+Playwright (framework d’automatisation web)
+Node.js (environnement d’exécution JavaScript)
+VS Code (éditeur de code)
+Git (gestion de version)
 
-Ce projet a pour but de valider la plateforme de recrutement de l’INSSPA :
+Prérequis :
+Avant d’exécuter les tests :
 
-Vérification complète des formulaires d’inscription et de mise à jour
+Installer Node.js (version 18 ou supérieure).
+Installer Git et VS Code.
+Cloner le projet depuis GitHub :
+git clone https://github.com/HAMADGHAB/Rapport_Test_INSSPA_REC2025-.git
+cd Rapport_Test_INSSPA_REC2025-
 
-Test de la navigation, des performances et de l’accessibilité
-
-Validation de la génération automatique des fichiers PDF pour chaque profil
-
-📦 Installation et exécution via GitHub
-1️⃣ Télécharger le projet
-# Cloner le dépôt
-git clone https://github.com/[votre-username]/Rapport_Test_INSSPA_REC2025.git
-cd Rapport_Test_INSSPA_REC2025
-
-
-Ou télécharger manuellement :
-
-Ouvrir : https://github.com/[votre-username]/Rapport_Test_INSSPA_REC2025
-
-Cliquer sur Code → Download ZIP
-
-Extraire le dossier ZIP
-
-2️⃣ Installer les dépendances
-# Installer Node.js (si non installé)
-# Télécharger : https://nodejs.org/
-
-# Installer les modules du projet
+Installer les dépendances nécessaires :
 npm install
-
-3️⃣ Installer et configurer Playwright
 npx playwright install
 
-4️⃣ Structure du projet
-Rapport_Test_INSSPA_REC2025/
-├── tests/
-│   ├── inscriptions/
-│   │   ├── veterinaire.spec.js
-│   │   ├── ingenieur.spec.js
-│   │   ├── technicien.spec.js
-│   │   └── kateb-tassarouf.spec.js
-│   └── mises-a-jour/
-│       ├── mise-a-jour-veterinaire.spec.js
-│       ├── mise-a-jour-ingenieur.spec.js
-│       ├── mise-a-jour-technicien.spec.js
-│       └── mise-a-jour-kateb.spec.js
-├── playwright.config.js
-├── package.json
-└── README.md
+Vérifications importantes après l’installation de Playwright :
+Pendant ou après l’installation, Playwright peut créer automatiquement un dossier de test nommé tests, e2e ou similaire.
+➜ Il faut supprimer ce dossier immédiatement après l’installation.
+Conserver uniquement le dossier tests provenant du dépôt GitHub cloné, car c’est lui qui contient les scripts officiels du projet.
+Supprimer également le fichier example.spec.js, qui est créé par défaut par Playwright lors de la première installation.
+➜ Ce fichier se trouve généralement dans le dossier tests ou e2e généré automatiquement.
+➜ Supprime aussi tout autre dossier créé automatiquement par Playwright, car le dépôt GitHub contient déjà tous les fichiers nécessaires.
+Vérifier qu’il n’existe qu’un seul fichier playwright.config.js dans le projet.
+➜ S’il y en a deux, conserver uniquement celui du projet cloné depuis GitHub.
 
-🧪 Résultats des tests d’inscription
-🩺 Vétérinaire
+Alternative d’installation locale (si vous ne clonez pas le projet complet)
+Créer manuellement un dossier sur votre poste de travail nommé :
+TEST_INSSPA
+Télécharger uniquement le dossier tests depuis le dépôt GitHub :
+  **** https://github.com/HAMADGHAB/Rapport_Test_INSSPA_REC2025-
+Copier le dossier tests dans le dossier "TEST_INSSPA".
+Ouvrir VS Code, puis :
+Cliquer sur Fichier > Ouvrir un dossier
+Sélectionner "TEST_INSSPA"
+Vérifier que vous êtes bien dans le dossier TEST_INSSPA (où se trouve le dossier tests contenant les scripts).
 
-Statut : ✅ Réussi
+Installer Node.js et Playwright :
+npm init -y
+npm install -D @playwright/test@latest
+npx playwright install
 
-Tests : Formulaire complet, génération CIN, téléchargement PDF
 
-Résultat : Candidature validée avec document PDF
+Lancer les tests :
 
-⚙️ Ingénieur Principal
-
-Statut : ✅ Réussi
-
-Tests : Données académiques, spécialisation, baccalauréat
-
-Résultat : PDF de confirmation généré
-
-🧰 Technicien
-
-Statut : ✅ Réussi
-
-Tests : Diplômes techniques, établissements privés, équivalences
-
-Résultat : Inscription complète avec PDF
-
-📘 Kateb Tassarouf
-
-Statut : ✅ Réussi
-
-Tests : Données personnelles, baccalauréat
-
-Résultat : Processus validé
-
-🔁 Résultats des tests de mise à jour
-Profil	Statut	Modifications testées	Résultat	CIN
-Vétérinaire	✅ Réussi	Téléphone, diplômes, expériences	PDF généré	11043873
-Ingénieur	✅ Réussi	Coordonnées, formations	PDF généré	11251191
-Technicien	✅ Réussi	Données personnelles	PDF généré	11224240
-Kateb Tassarouf	✅ Réussi	Informations baccalauréat	PDF généré	11882181
-💻 Commandes Playwright utilisées
-# Exécuter tous les tests
-npx playwright test
-
-# Lancer avec navigateur visible
-npx playwright test --headed
-
-# Mode débogage
-npx playwright test --debug
-
-# Interface graphique des tests
 npx playwright test --ui
 
-# Générer un rapport HTML
-npx playwright test --reporter=html
+Cas de test :
 
-📁 Fichiers générés
-downloads/
-├── candidature_veterinaire_[CIN].pdf
-├── candidature_ingenieur_[CIN].pdf
-├── candidature_technicien_[CIN].pdf
-├── candidature_kateb_[CIN].pdf
-├── mise_a_jour_veterinaire_11043873.pdf
-├── mise_a_jour_ingenieur_11251191.pdf
-├── mise_a_jour_technicien_11224240.pdf
-└── mise_a_jour_kateb_11882181.pdf
+Ouverture du site : Vérifier que la page http://193.95.84.7/concours/recrutement_insspa_2025/ s’affiche correctement.
 
-✅ Fonctionnalités validées
-Processus d’inscription
+Navigation : Vérifier le fonctionnement des menus et liens.
 
-Navigation fluide et accessible
+Formulaires d’inscription :
 
-Remplissage automatique des formulaires
+Vérifier le chargement du formulaire.
 
-Validation et soumission correctes
+Remplir tous les champs obligatoires.
 
-Téléchargement automatique du PDF de confirmation
+Soumettre et vérifier le message de confirmation.
 
-Génération de CIN uniques
+Accessibilité : Contrôler l’accès clavier et la présence des attributs ARIA.
 
-Processus de mise à jour
+Performance : Mesurer le temps de chargement et la stabilité de la page.
 
-Identification par CIN
+Résultat du test :
 
-Modification des informations existantes
+Les tests fonctionnent correctement en local.
 
-Ajout d’expériences et diplômes
+Les erreurs sur GitHub Actions sont dues à l’adresse IP interne (193.95.84.7), inaccessible à distance.
 
-Génération d’un PDF d’attestation
+En local, les tests réussissent après ajustement du paramètre waitUntil (domcontentloaded).
 
-Aspects techniques
+Les rapports HTML sont générés dans le dossier playwright-report.
 
-Gestion des erreurs et délais d’attente
+Guide d’exécution locale (PC) :
 
-Vérification des formats (emails, dates, téléphones)
+Ouvrir le projet dans VS Code :
 
-Téléchargement automatique et sauvegarde locale
+code .
 
-Logs détaillés pour le suivi QA
 
-📊 Bilan général
-Indicateur	Résultat
-Scénarios exécutés	8
-Taux de réussite	100%
-Fiabilité	Excellente
-Maintenabilité	Bonne
-Robustesse	Confirmée
-Reproductibilité	Constante
-🏁 Conclusion
+Installer les navigateurs Playwright (si non installés) :
 
-Les tests automatisés de la plateforme INSSPA Recrutement 2025 sont terminés avec succès.
-L’ensemble des processus d’inscription et de mise à jour est fonctionnel, stable et validé.
-Le projet est prêt pour la recette finale.
-
-📅 Date du rapport : 24 octobre 2025
-👨‍💻 Responsable QA : Hamad Ghabri
-✅ Statut final : Projet terminé – Tous les tests réussis
-
-📘 Guide rapide pour exécuter les tests depuis GitHub
-Cloner le dépôt
-git clone https://github.com/[votre-username]/Rapport_Test_INSSPA_REC2025.git
-cd Rapport_Test_INSSPA_REC2025
-
-Installer les dépendances
-npm install
 npx playwright install
 
-Lancer les tests
-npx playwright test
 
-Afficher le rapport HTML
+Exécuter les tests avec interface graphique :
+
+npx playwright test --ui
+
+
+Afficher le rapport HTML après l’exécution :
+
 npx playwright show-report
 
-(Optionnel) Observer les tests en direct
-npx playwright test --headed
 
+Avant chaque nouvelle exécution :
+  Supprimer les anciens dossiers de résultats :
 
-Ce document agit à la fois comme rapport de validation QA et README GitHub pour le projet
-Rapport_Test_INSSPA_REC2025 – Automatisation Playwright du site de recrutement INSSPA 2025.
+rm -rf test-results playwright-report
+
+    Conclusion :
+Les tests automatisés Playwright du projet INSSPA Recrutement 2025 sont pleinement opérationnels en environnement local.
+La suppression des fichiers et dossiers générés automatiquement par Playwright est essentielle pour éviter les conflits avec les tests du projet.
+Le dossier cloné depuis GitHub contient déjà tous les fichiers nécessaires à l’exécution.
+La procédure alternative permet également une configuration manuelle claire et rapide.
